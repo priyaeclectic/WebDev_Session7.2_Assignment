@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title> Assignment 7.2 </title>
+</head>
+<body>
+	<div id="info"></div>
+	<form>				<!--Call function myFunction for display-->
+		Name:<input type="text" onclick="myFunction('name')"><br>
+		Age:<input type="text" onclick="myFunction('age')"><br>
+		City:<input type="text" onclick="myFunction('city')"><br>
+	</form>
+</body>
+<script type="text/javascript">
+	//Closure function that returns alert string to  be displayed on the div above the form
+	var returnString=(function ()
+	{
+		return function (x){
+			return "Please enter "+x;
+		}
+	})();
+
+	function myFunction(a)
+	{
+    	document.getElementById("info").innerHTML = returnString(a);
+	}
+  
+</script>
+</html>
